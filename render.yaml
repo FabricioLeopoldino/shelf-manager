@@ -1,0 +1,32 @@
+services:
+  - type: web
+    name: smartshelf-manager
+    env: node
+    region: oregon
+    plan: starter
+    rootDir: backend
+    buildCommand: npm install && npm run build:frontend
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+      - key: CORS_ORIGIN
+        value: "*"
+      - key: DB_HOST
+        sync: false
+      - key: DB_PORT
+        value: 5432
+      - key: DB_USER
+        sync: false
+      - key: DB_PASSWORD
+        sync: false
+      - key: DB_NAME
+        value: smartshelf_db
+      - key: DB_SSL
+        value: true
+      - key: JWT_SECRET
+        generateValue: true
+      - key: LEAUTOTECH_JWT_SECRET
+        sync: false
