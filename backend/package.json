@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node src/server.js",
     "dev": "nodemon src/server.js",
-    "build:frontend": "cd ../frontend && npm install && npx vite build && rm -rf ../backend/public/* && cp -r dist/* ../backend/public/"
+    "build:frontend": "cd ../frontend && npm install && npm install vite && npx vite build && rm -rf ../backend/public/* && cp -r dist/* ../backend/public/"
   },
   "keywords": [
     "inventory",
